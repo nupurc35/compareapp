@@ -1,0 +1,33 @@
+{%  extends 'compareapp/index.html' %}
+{% block content %}
+<br>
+<h4>This is dashboard page </h4>
+<div class="container">
+<div class="row">
+
+<div class="col-sm-6">
+<select class="selectpicker" title="Smartphone 1" id="smartphone-1-select">
+	{% if allsmartPhones %}
+	<option class="select-option" value="none">Select Option</option>
+	{% for smartphone in allsmartPhones %}
+    <option class="select-option" value="{{smartphone.id}}" id="smartphone-1-{{smartphone.id}}">{{smartphone.launch.name}}</option>
+    {% endfor %}
+	
+	
+    {% endif %}
+</select>
+</div>
+<div class="col-sm-6">
+	<select class="selectpicker" title="Smartphone 2" id="smartphone-2-select">
+		{% if allsmartPhones %}
+		<option class="select-option" value="none">Select Option</option>
+		{% for smartphone in allsmartPhones %}
+		<option class="select-option" value="{{smartphone.id}}" id="smartphone-2-{{smartphone.id}}">{{smartphone.launch.name}}</option>
+		{% endfor %}
+		{% endif %}
+	</select>
+</div>
+</div>
+</div> 
+{% endblock %}
+
